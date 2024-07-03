@@ -1,6 +1,6 @@
 # varadavaidya
 
-Its me Varada.
+Its me Varada
 ```
 print("Its me Varada")
 ```
