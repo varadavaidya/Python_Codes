@@ -1,0 +1,6 @@
+print(8.5+5)
+print('8.58'+' 5')
+print('float(8.5)','5')
+print("float(8.5)"+'5')
+print('we\'re the champions here')
+print("we're here")
