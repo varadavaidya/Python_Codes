@@ -1,0 +1,41 @@
+def sortedFrequency(arr,num):
+    m=len(arr)
+    if num not in arr:
+        return -1
+    if m==0:
+        return -1
+    if m==1:
+        if arr[0]==num:
+            return 1
+        else:
+            return 0
+    if m==2:
+        if arr[0]==num:
+            if arr[1]==num:
+                return 2
+            else:
+                return 1
+        elif arr[0]!=num:
+            if arr[1]==num:
+                return 1
+            else:
+                return 0
+    if m%2==0:
+        if arr[int(m/2)]==num:
+            return sortedFrequency(arr[:int(m/2)],num)+sortedFrequency(arr[int(m/2):],num)
+        elif arr[int(m/2)]<num:
+            return sortedFrequency(arr[int(m/2):],num)
+    if m%2==1:
+        if arr[int((m-1)/2)]==num:
+            return sortedFrequency(arr[:int((m-1)/2)],num)+sortedFrequency(arr[int((m-1)/2):],num)
+        elif arr[int((m-1)/2)]<num:
+            return sortedFrequency(arr[int((m-1)/2):],num)
+
+
+
+
+
+print(sortedFrequency([1, 1, 2, 2, 2, 2, 3], 2))
+print(sortedFrequency([1, 1, 2, 2, 2, 2, 3], 3))
+print(sortedFrequency([1, 1, 2, 2, 2, 2, 3], 4) )# -1
+print(sortedFrequency([], 4)) # -1
